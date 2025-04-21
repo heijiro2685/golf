@@ -1,0 +1,148 @@
+/* -------------------- */
+/* ▼追加する項目         */
+/* -------------------- */
+table.normal {                     /*表を左寄せに配置*/
+    border-collapse: collapse;
+    border: 1px solid darkcyan; 
+    margin-top:10px;
+    margin-left:50px;
+    /*margin-right: auto;*/
+}
+
+table.normal tr:nth-child(1){
+    font-weight: bold;
+    background-color: lightblue;
+}
+table.normal tr:nth-child(1) td{
+    padding-left:50px;
+}
+table.normal tr:nth-child(2){
+    font-weight: bold;
+}
+table.normal tr:nth-child(3){
+    font-weight: bold;
+}
+table.normal tr:nth-child(4) td:nth-child(1){
+    font-weight: bold;
+}
+table.normal tr:nth-child(4) td:nth-child(11){
+    font-weight: bold;
+}
+table.normal tr:nth-child(4) td:nth-child(12){
+    font-weight: bold;
+}
+table.normal tr:nth-child(4) td:nth-child(22){
+    font-weight: bold;
+}
+table.normal tr:nth-child(4) td:nth-child(23){
+    font-weight: bold;
+}
+table.normal tr:nth-child(4) td:nth-child(33){
+    font-weight: bold;
+}
+table.normal tr:nth-child(4) td:nth-child(34){
+    font-weight: bold;
+}
+table.normal tr:nth-child(n+2) td {                  /*文字太字、罫線、左右スペース*/
+    text-align: center;
+    border: 1px solid darkcyan; 
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+table.normal .eagle {
+    color:red;
+    font-weight: bold;
+}
+table.normal .birdie {
+    font-weight: bold;
+}
+
+/* -------------------- */
+/* ▼メニューバーの装飾    */
+/* -------------------- */
+#ttl {
+    color:yellow;
+    font-size:larger;
+    text-align:center;
+    font-weight: bold;         /* 太字にする */
+}
+
+ul.ddmenu{
+    margin: 0px;               /* メニューバー外側の余白(ゼロ) */
+    padding: 0px 0px 0px 0px; /* メニューバー内側の余白(左に15px) */
+    background-color: #11119c /* バーの背景色(濃い赤色) */
+}
+
+ /* -------------------------- */
+ /* ▼メインメニュー項目の装飾 */
+ /* -------------------------- */
+#ttl {
+    color:yellow;
+    font-size:larger;
+    text-align:center;
+    font-weight: bold;         /* 太字にする */
+}
+
+ul.ddmenu li:nth-child(1){
+    width: 240px;          /* メニュー項目の横幅(125px) */
+    display: inline-block; /* ★横並びに配置する */
+    list-style-type: none; /* ★リストの先頭記号を消す */
+    vertical-align:middle;
+}
+ul.ddmenu li:nth-child(n+2){
+    width: 150px;          /* メニュー項目の横幅(125px) */
+    color:white;
+    display: inline-block; /* ★横並びに配置する */
+    list-style-type: none; /* ★リストの先頭記号を消す */
+    position: relative;    /* ★サブメニュー表示の基準位置にする */
+}
+ul.ddmenu li:nth-child(n+2) a {
+    background-color: #11119c; /* メニュー項目の背景色(濃い赤色) */
+    color: white;              /* メニュー項目の文字色(白色) */
+    line-height: 40px;         /* メニュー項目のリンクの高さ(40px) */
+    text-align: center;        /* メインメニューの文字列の配置(中央寄せ) */
+    text-decoration: none;     /* メニュー項目の装飾(下線を消す) */
+    font-weight: bold;         /* 太字にする */
+    display: block;            /* ★項目内全域をリンク可能にする */
+}
+ul.ddmenu li:nth-child(n+2) a:hover {
+    background-color: #ffdddd; /* メニュー項目にマウスが載ったときの背景色(淡いピンク) */
+    color: #dd0000;            /* メニュー項目にマウスが載ったときの文字色(濃い赤色) */
+}
+
+ /* ---------------------------------- */
+ /* ▼サブメニューがある場合に開く処理 */   /* ※サブメニューが1階層しか存在しない場合の記述 */
+ /* ---------------------------------- */
+ul.ddmenu li:hover ul {
+    display: block;      /* ★マウスポインタが載っている項目の内部にあるリストを表示する */
+}
+
+/* -------------------- */
+ /* ▼サブメニューの装飾 */
+ /* -------------------- */
+
+ul.ddmenu ul {
+    margin: 0px;         /* ★サブメニュー外側の余白(ゼロ) */
+    padding: 0px;        /* ★サブメニュー内側の余白(ゼロ) */
+    display: none;       /* ★標準では非表示にする */
+    position: absolute;  /* ★絶対配置にする */
+}
+
+ /* ------------------------ */
+ /* ▼サブメニュー項目の装飾 */
+ /* ------------------------ */
+ul.ddmenu li:nth-child(n+2) ul li {
+    width: 280px;               /* サブメニュー1項目の横幅 */
+    border-top: 1px solid pink; /* 項目上側の枠線(ピンク色で1pxの実線) */
+}
+ul.ddmenu li:nth-child(n+2) ul li a {
+    line-height: 35px;     /* サブメニュー1項目の高さ(35px) */
+    font-weight:normal;     /* 太字にはしない */
+    text-align: left;      /* 文字列の配置(左寄せ) */
+    padding-left: 5px;     /* 文字列前方の余白(5px) */
+}
+ul.ddmenu li:nth-child(n+2) ul li a:hover {
+    background-color: #ffdddd; /* サブメニュー項目にマウスが載ったときの背景色(淡い黄色) */
+    color: #005500;            /* サブメニュー項目にマウスが載ったときの文字色(濃い緑色) */
+}
