@@ -5,11 +5,10 @@
 # 2024.11.11～html5対応に修正開始
 
 # プレー結果アップロード
-$holders = "E:\\hobby\\server\\";
+$holders = "D:\\hobby\\server\\";
 $holderc = "C:\\Users\\kjyos\\OneDrive\\Temporary\\";
 
 if (is_uploaded_file($_FILES["upfile"]["tmp_name"])) {
-#    var_dump($_FILES);
     if (move_uploaded_file($_FILES["upfile"]["tmp_name"], $holders. "playdate.csv")) {
         echo $_FILES["upfile"]["name"] . "をアップロードしました<br>";
     } else {
@@ -34,14 +33,14 @@ try {
 
     # データ数から順位あり、なしを判断
     $columnss = count($alldata[1]);
-    if ($columnss == 29){
+    if ($columnss == 28){
         $compe = TRUE;
     }
     else
         $compe = FALSE;
     #var_dump($compe);   echo "<br>";
 
-    $holdero = "E:\\temporary\\";
+    $holdero = "D:\\temporary\\";
     $outptr = fopen($holdero."mid.html", "w");
 
     # 1行目～コンペ、通常ラウンド共通
@@ -86,8 +85,7 @@ try {
         $str = $str."<td>".$alldata[1][$column]."</td>";    # HDCP
         $column++;
         $str = $str."<td>".$alldata[1][$column]."</td>";    # NET
-        #$column++;
-        #$str = $str."<td>".$alldata[1][$column]."</td>";    # 記事
+
     }
     else {
         $str = $str."<td rowspan=\"3\">".$alldata[1][$column]."</td>";  # out
@@ -148,11 +146,9 @@ try {
         $str = $str."<td rowspan=\"2\">".$alldata[2][$column]."</td>";  # HDCP
         $column++;
         $str = $str."<td rowspan=\"2\">".$alldata[2][$column]."</td>";  # NET
-        #$column++;
-        #$str = $str."<td rowspan=\"2\">".$alldata[2][$column]."</td>";  # 記事
     }
     else {
-        $column++;  # 飛ばす(outの下)
+        $column++;
         $str = $str."<td>".$alldata[2][$column]."</td>";    # Par
         $column++;
     
@@ -192,10 +188,10 @@ try {
                     $str = $str."<td>".$alldata[3][$column]."</td>";
                 }
                 else if($subb == 1){
-                    $str = $str."<tdclass=\"birdie\">".$alldata[3][$column]."</td>";
+                    $str = $str."<td class=\"birdie\">".$alldata[3][$column]."</td>";
                 }
                 else {
-                    $str = $str."<td class=\"eagle\">".$alldata[3][$column]."</td>".PHP_EOL;
+                    $str = $str."<td class=\"eagle\">".$alldata[3][$column]."</td>";
                 }    
             }
             else {
@@ -350,8 +346,6 @@ try {
         else {
             $str = $str."<td></td>";
         }
-        #$column++;
-        #$str = $str."<td>".$alldata[3][$column]."</td>";
     }    
     $str = $str."</tr>".PHP_EOL;
     #var_dump($str); echo "<br>";
@@ -394,5 +388,5 @@ catch(Exception $excn){
     exit;
 }
 
-echo "<p>処理を終了しました。作成されたファイル {$holderc}output.html を確認。<br>問題なければcopyseiseki.html実行</p>";
+echo "<p>処理を終了しました。作成されたファイル {$holderc}output.html を確認。問題なければcopyseiseki.html実行</p>";
 
