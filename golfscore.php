@@ -279,7 +279,7 @@ try {
                     $str = $str."<td>".$alldata[3][$column]."</td>";
                 }
                 else if($subb == 1){
-                    $str = $str."<tdclass=\"birdie\">".$alldata[3][$column]."</td>";
+                    $str = $str."<td class=\"birdie\">".$alldata[3][$column]."</td>";
                 }
                 else {
                     $str = $str."<td class=\"eagle\">".$alldata[3][$column]."</td>".PHP_EOL;
