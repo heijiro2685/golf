@@ -84,9 +84,9 @@ try {
         }
 
         $str = $str."<td>Par<br>Gross</td>";    # par/Gross
-        $column++;
+        # $column++;
         $str = $str."<td>HDCP</td>";    # HDCP
-        $column++;
+        # $column++;
         $str = $str."<td>NET</td>";    # NET
         #$column++;
         #$str = $str."<td>".$alldata[1][$column]."</td>";    # 記事
