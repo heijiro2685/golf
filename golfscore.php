@@ -77,15 +77,17 @@ try {
         $str = $str."<td>".$alldata[1][$column]."</td>";     # Hole
         $column++;
 
-        # 後半9ホール、後半トータル、グロス
-        for($jj = 0;$jj < 11; $jj++){
+        # 後半9ホール、後半トータル
+        for($jj = 0;$jj < 10; $jj++){
             $str = $str."<td>".$alldata[1][$column]."</td>";
             $column++;
         }
 
-        $str = $str."<td>".$alldata[1][$column]."</td>";    # HDCP
+        $str = $str."<td>Par<br>Gross</td>";    # par/Gross
         $column++;
-        $str = $str."<td>".$alldata[1][$column]."</td>";    # NET
+        $str = $str."<td>HDCP</td>";    # HDCP
+        $column++;
+        $str = $str."<td>NET</td>";    # NET
         #$column++;
         #$str = $str."<td>".$alldata[1][$column]."</td>";    # 記事
     }
@@ -282,7 +284,7 @@ try {
                     $str = $str."<td class=\"birdie\">".$alldata[3][$column]."</td>";
                 }
                 else {
-                    $str = $str."<td class=\"eagle\">".$alldata[3][$column]."</td>".PHP_EOL;
+                    $str = $str."<td class=\"eagle\">".$alldata[3][$column]."</td>";
                 }    
             }
             else {
@@ -317,7 +319,7 @@ try {
                     $str = $str."<td class=\"birdie\">".$alldata[3][$column]."</td>";
                 }
                 else {
-                    $str = $str."<td class=\"eagle\">".$alldata[3][$column]."</font></td>";
+                    $str = $str."<td class=\"eagle\">".$alldata[3][$column]."</td>";
                 }
             }
             else {
